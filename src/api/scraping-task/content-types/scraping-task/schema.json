@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scraping_tasks",
+  "info": {
+    "singularName": "scraping-task",
+    "pluralName": "scraping-tasks",
+    "displayName": "Scraping Task"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "task_name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "task_status": {
+      "type": "enumeration",
+      "enum": [
+        "in-progress",
+        "completed",
+        "failed",
+        "pending"
+      ]
+    },
+    "last_run": {
+      "type": "datetime"
+    },
+    "frecuency": {
+      "type": "enumeration",
+      "enum": [
+        "daily",
+        "weekly",
+        "monthly"
+      ]
+    },
+    "error_logs": {
+      "type": "text"
+    }
+  }
+}

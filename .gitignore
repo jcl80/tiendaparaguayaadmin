@@ -1,0 +1,104 @@
+############################
+# OS-Specific Files
+############################
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+.Spotlight-V100
+.Trashes
+._*
+
+# Linux
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+############################
+# Packages and Archives
+############################
+
+*.7z
+*.zip
+*.tar
+*.gz
+*.rar
+*.iso
+*.dmg
+
+############################
+# Compiled Files and Executables
+############################
+
+*.class
+*.dll
+*.exe
+*.o
+*.so
+*.out
+*.pid
+
+############################
+# Logs and Temporary Files
+############################
+
+*.log
+*.tmp
+*.seed
+*.swo
+*.swp
+*.swn
+*.swm
+
+############################
+# Databases
+############################
+
+*.sql
+*.sqlite
+*.sqlite3
+
+############################
+# Node.js and JavaScript
+############################
+
+node_modules/
+.node_history
+lib-cov
+coverage/
+lcov.info
+results
+pids
+logs
+
+############################
+# IDEs and Editors
+############################
+
+.idea/
+nbproject/
+.vscode/
+*.iml
+
+############################
+# Strapi Specific
+############################
+
+.env
+license.txt
+exports/
+.strapi/
+.strapi-updater.json
+.strapi-cloud.json
+build/
+dist/
+.tmp/
+public/uploads/*       # Exclude uploaded files
+!public/uploads/.gitkeep  # Keep the empty folder in Git
+public/
