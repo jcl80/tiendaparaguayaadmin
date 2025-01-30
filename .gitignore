@@ -103,3 +103,4 @@ public/uploads/*       # Exclude uploaded files
 !public/uploads/.gitkeep  # Keep the empty folder in Git
 public/
 JorgeTratoHecho.pem
+package-lock.json
