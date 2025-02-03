@@ -14,7 +14,9 @@
     "@strapi/plugin-cloud": "4.25.18",
     "@strapi/plugin-i18n": "4.25.18",
     "@strapi/plugin-users-permissions": "4.25.18",
+    "@strapi/provider-upload-aws-s3": "4.15.4",
     "@strapi/strapi": "4.25.18",
+    "aws-sdk": "^2.1692.0",
     "better-sqlite3": "8.6.0",
     "pg": "^8.13.1",
     "react": "^18.0.0",
@@ -29,8 +31,8 @@
     "uuid": "60ff058c-ab29-46f7-996d-f3e505fbccfd"
   },
   "engines": {
-  "node": ">=18.0.0 <=20.x.x",
-  "npm": ">=6.0.0 <11.0.0"
+    "node": ">=18.0.0 <=20.x.x",
+    "npm": ">=6.0.0 <11.0.0"
   },
   "license": "MIT"
 }

@@ -425,8 +425,9 @@ export interface ApiPostPost extends Schema.CollectionType {
     createdAt: Attribute.DateTime;
     createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
       Attribute.Private;
-    description: Attribute.Text;
-    images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true>;
+    description: Attribute.Text & Attribute.Required;
+    images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
+      Attribute.Required;
     post_origin: Attribute.String;
     post_status: Attribute.Enumeration<['draft', 'published', 'out_of_stock']>;
     price: Attribute.BigInteger & Attribute.Required;
@@ -437,7 +438,7 @@ export interface ApiPostPost extends Schema.CollectionType {
       'oneToOne',
       'api::subcategory.subcategory'
     >;
-    title: Attribute.String;
+    title: Attribute.String & Attribute.Required;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
       Attribute.Private;
