@@ -426,6 +426,8 @@ export interface ApiPostPost extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::post.post', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     description: Attribute.Text & Attribute.Required;
+    favorites: Attribute.Boolean;
+    featured: Attribute.Boolean;
     images: Attribute.Media<'images' | 'files' | 'videos' | 'audios', true> &
       Attribute.Required;
     post_origin: Attribute.String;
@@ -516,6 +518,46 @@ export interface ApiSubcategorySubcategory extends Schema.CollectionType {
       'admin::user'
     > &
       Attribute.Private;
+  };
+}
+
+export interface ApiWishlistWishlist extends Schema.CollectionType {
+  collectionName: 'wishlists';
+  info: {
+    description: '';
+    displayName: 'Wishlist';
+    pluralName: 'wishlists';
+    singularName: 'wishlist';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::wishlist.wishlist',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    posts: Attribute.Relation<
+      'api::wishlist.wishlist',
+      'oneToMany',
+      'api::post.post'
+    >;
+    publishedAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::wishlist.wishlist',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    user: Attribute.Relation<
+      'api::wishlist.wishlist',
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -959,6 +1001,7 @@ declare module '@strapi/types' {
       'api::post.post': ApiPostPost;
       'api::scraping-task.scraping-task': ApiScrapingTaskScrapingTask;
       'api::subcategory.subcategory': ApiSubcategorySubcategory;
+      'api::wishlist.wishlist': ApiWishlistWishlist;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

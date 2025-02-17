@@ -65,6 +65,12 @@
       "type": "string",
       "unique": true,
       "required": true
+    },
+    "favorites": {
+      "type": "boolean"
+    },
+    "featured": {
+      "type": "boolean"
     }
   }
 }
